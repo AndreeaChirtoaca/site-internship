@@ -6,15 +6,18 @@
       :image="heroShow.image"
       :description="heroShow.description"
     />
+    <BrowseCollection/>
   </div>
 </template>
 
 <script>
 import HeroSection from "./components/HeroSection";
+import BrowseCollection from "./components/BrowseCollection";
 export default {
   name: "HomePage",
   components: {
-    HeroSection
+    HeroSection,
+    BrowseCollection
   },
   data: function() {
     return {
