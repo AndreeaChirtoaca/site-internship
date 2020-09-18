@@ -7,6 +7,7 @@ import MostPopular from "./MostPopular";
 import Newest from "./Newest";
 import RecentlyUpdated from "./RecentlyUpdated";
 import SearchPage from "./SearchPage";
+import ShowPage from "./ShowPage";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -16,7 +17,8 @@ const routes = [
   { path: "/MostPopular", component: MostPopular },
   { path: "/Newest", component: Newest },
   { path: "/RecentlyUpdated", component: RecentlyUpdated },
-  { path: "/SearchPage", component: SearchPage }
+  { path: "/SearchPage", component: SearchPage },
+  { path: "/ShowPage/:id", component: ShowPage }
 ];
 
 const router = new VueRouter({

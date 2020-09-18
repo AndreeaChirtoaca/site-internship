@@ -23,7 +23,8 @@ export default {
     title: String,
     subtitle: String,
     description: String,
-    image: String
+    image: String,
+    id: 4
   },
   data: function() {
     return {
@@ -31,7 +32,9 @@ export default {
     };
   },
   methods: {
-    goToShow: function() {},
+    goToShow: function() {
+      this.$router.push({ path: "/ShowPage/" + this.id });
+    },
     seeMore: function() {
       this.see = true;
     }
@@ -46,6 +49,8 @@ export default {
   background: var(--background-color);
   display: flex;
   align-items: start;
+  margin: 15px;
+  box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
   
 }
 .showText {
@@ -103,7 +108,7 @@ export default {
   padding-left: 10px;
   margin: 10px;
   cursor: pointer;
-  color: rgb(201, 77, 32);
+  color:  rgb(226, 88, 37);
   font-family: Roboto;
   font-weight: bold;
   font-size: 20px;
@@ -125,7 +130,7 @@ text-decoration: underline;
   margin-right: 10px;
   font-size: 16px;
   border-radius: 5px;
-  background-color: rgb(235, 105, 57);
+  background-color: rgb(226, 88, 37);
   line-height: 28px;
   color: white;
 }

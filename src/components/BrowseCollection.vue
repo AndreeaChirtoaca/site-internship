@@ -1,15 +1,43 @@
 <template>
-  <div class="BrowseCollection">
-    <div class="blockForLink">
-      <router-link to="/MostPopular" class="link">Most Popular</router-link>
+  <div>
+    <div class="BrowseCollection">
+      <div class="name">
+        <router-link to="/MostPopular" class="link">Most Popular</router-link>
+      </div>
+      <div class="cards">
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+      </div>
     </div>
-    <div class="cards">
-      <BrowseCard/>
-      <BrowseCard/>
-      <BrowseCard/>
-      <BrowseCard/>
-      <BrowseCard/>
-      <BrowseCard/>
+    <div class="BrowseCollection">
+      <div class="name">
+        <router-link to="/Newest" class="link">Newest</router-link>
+      </div>
+      <div class="cards">
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+      </div>
+    </div>
+    <div class="BrowseCollection">
+      <div class="name">
+        <router-link to="/RecentlyUpdated" class="link">Recently Updated</router-link>
+      </div>
+      <div class="cards">
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+        <BrowseCard/>
+      </div>
     </div>
   </div>
 </template>
@@ -21,8 +49,18 @@ export default {
   components: {
     BrowseCard
   },
+  props: {
+    name: String
+  },
   data: function() {
-    return {};
+    return {
+      cardsMostPupular: [
+        {
+          title: "1episode",
+          imageURL: ""
+        }
+      ]
+    };
   }
 };
 </script>
@@ -30,29 +68,39 @@ export default {
 <style scoped>
 .BrowseCollection {
   background-color: white;
-  height: 350px;
-  border: 2px solid black;
+  height: 400px;
+  //border: 2px solid black;
+  box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
+  margin: 15px;
+  text-align: center;
+  box-sizing: border-box;
 }
 .link {
-  color: black;
-  text-align: left;
-  text-decoration: none;
-  font-family: Roboto, sans-serif;
-  font-size: 17px;
+  font-size: 30px;
+  //color: grey;
+  color: rgb(226, 88, 37);
+  cursor: pointer;
+  font-weight: bold;
   margin: 10px;
-}
-.blockForLink {
-  padding: 10px;
-  height: 5%;
+  text-decoration: none;
 }
 .link:hover {
-  text-decoration: underline;
+  text-shadow: 3px 2px rgb(167, 158, 158);
 }
+.name {
+  height: 10%;
+  //border: 2px solid black;
+  margin: 5px;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
 .cards {
-  height: 80%;
   display: flex;
+  height: 80%;
+  //border: 2px solid black;
+  margin: 5px;
   align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+  box-sizing: border-box;
 }
 </style>
