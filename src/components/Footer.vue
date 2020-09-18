@@ -42,12 +42,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.footer a {
-  text-decoration: none;
-  color: #979797;
-  font-family: "Roboto", sans-serif;
-}
-
 .footer p span {
   margin-left: 3px;
   font-weight: bold;

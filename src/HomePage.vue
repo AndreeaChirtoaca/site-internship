@@ -7,17 +7,20 @@
       :description="heroShow.description"
     />
     <BrowseCollection/>
+    <MoreAnime/>
   </div>
 </template>
 
 <script>
 import HeroSection from "./components/HeroSection";
 import BrowseCollection from "./components/BrowseCollection";
+import MoreAnime from "./components/MoreAnime";
 export default {
   name: "HomePage",
   components: {
     HeroSection,
-    BrowseCollection
+    BrowseCollection,
+    MoreAnime
   },
   data: function() {
     return {

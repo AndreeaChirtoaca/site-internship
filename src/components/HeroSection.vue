@@ -84,7 +84,7 @@ export default {
   padding-bottom: 10px;
   text-transform: uppercase;
   font-family: serif;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 
 }
@@ -108,7 +108,7 @@ export default {
   padding-left: 10px;
   margin: 10px;
   cursor: pointer;
-  color:  rgb(226, 88, 37);
+  color:  rgb(192, 72, 28);
   font-family: Roboto;
   font-weight: bold;
   font-size: 20px;

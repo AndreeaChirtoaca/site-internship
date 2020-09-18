@@ -1,11 +1,13 @@
 <template>
   <div>
-    <h1>Show page</h1>
+    <h1>Browse Page</h1>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "BrowsePage"
+};
 </script>
 
 <style scoped>

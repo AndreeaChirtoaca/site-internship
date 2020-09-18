@@ -8,6 +8,7 @@ import Newest from "./Newest";
 import RecentlyUpdated from "./RecentlyUpdated";
 import SearchPage from "./SearchPage";
 import ShowPage from "./ShowPage";
+import BrowsePage from "./BrowsePage";
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -18,7 +19,8 @@ const routes = [
   { path: "/Newest", component: Newest },
   { path: "/RecentlyUpdated", component: RecentlyUpdated },
   { path: "/SearchPage", component: SearchPage },
-  { path: "/ShowPage/:id", component: ShowPage }
+  { path: "/ShowPage/:id", component: ShowPage },
+  { path: "/BrowsePage", component: BrowsePage }
 ];
 
 const router = new VueRouter({

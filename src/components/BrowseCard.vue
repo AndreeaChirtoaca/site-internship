@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .card {
   margin: 5px;
   height: 100%;
