@@ -1,17 +1,19 @@
 <template>
-    <div>
+  <div>
     <SearchPageForm/>
-    <div class="collection"></div>
-  </div>
+    <SearchCollection/>
+    <SearchCollection/>
   </div>
 </template>
 
 <script>
-import SearchPageForm from "./components/SearchPageForm"
+import SearchPageForm from "./components/SearchPageForm";
+import SearchCollection from "./components/SearchCollection";
 export default {
   name: "SearchPage",
-  components:{
-    SearchPageForm
+  components: {
+    SearchPageForm,
+    SearchCollection
   },
   data: function() {
     return {
@@ -29,7 +31,7 @@ export default {
   box-sizing: border-box;
   padding-top: 30px;
   background-color: rgb(150, 137, 137);
-  display: 
+  display: ;
 }
 .form {
   text-align: center;
@@ -42,15 +44,13 @@ export default {
 }
 .buttonSearch {
   height: 0.8cm;
-
 }
 #icon {
   height: 100%;
 }
-.button{
-text-align: center;
-border: 2px solid black;
-padding: 10px;
-
+.button {
+  text-align: center;
+  border: 2px solid black;
+  padding: 10px;
 }
 </style>

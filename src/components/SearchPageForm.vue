@@ -1,8 +1,8 @@
 <template>
-  <form class="searchForm">
+  <form class="searchForm" @submit.prevent="onSubmit()">
     <input class="input" type="text" v-model="search" placeholder="Search anime..">
     <span class="buttonContainer">
-      <button>
+      <button type="submit">
         <img id="icon" src="https://img.icons8.com/metro/26/000000/search.png">
       </button>
     </span>
@@ -16,6 +16,9 @@ export default {
     return {
       search: ""
     };
+  },
+  methods: {
+    onSubmit() {}
   }
 };
 </script>
@@ -23,7 +26,6 @@ export default {
 <style scoped>
 .searchForm {
   height: 2.5cm;
-  border: 2px solid black;
   text-align: center;
   padding-top: 17px;
   padding-left: 30%;

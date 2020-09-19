@@ -86,7 +86,6 @@ export default {
   font-family: serif;
   font-size: 25px;
   font-weight: bold;
-
 }
 .description {
   --line-height: 20px;
