@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Show page</h1>
+    <div class="trailer">Show page</div>
   </div>
 </template>
 
@@ -9,4 +9,7 @@ export default {};
 </script>
 
 <style scoped>
+.trailer {
+  width: 100%;
+}
 </style>

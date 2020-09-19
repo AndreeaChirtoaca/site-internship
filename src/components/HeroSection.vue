@@ -115,7 +115,7 @@ export default {
   background: var(--background-color);
 }
 .seeMore:hover{
-text-decoration: underline;
+color: rgba(226, 87, 37, 0.952)
 }
 
 .buttonHero {
@@ -131,9 +131,9 @@ text-decoration: underline;
   border-radius: 5px;
   background-color: rgb(226, 88, 37);
   line-height: 28px;
-  color: white;
+  color: rgb(231, 224, 224);
 }
 .buttonHero:hover {
-  text-decoration: underline;
+  color: white;
 }
 </style>

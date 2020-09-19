@@ -31,7 +31,6 @@ export default {
   height: 100%;
   box-sizing: border-box;
   box-shadow: 5px 6px 5px 0px rgba(2, 2, 2, 0.19);
-  border: 2px solid black;
 }
 .card:hover {
   box-shadow: 5px 6px 5px 0px rgb(231, 166, 142);
@@ -45,7 +44,6 @@ export default {
   object-fit: cover;
 }
 .titleContainer {
-  //border: 1px solid black;
   height: 17%;
   padding-top: 10px;
 }

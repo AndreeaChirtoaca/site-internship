@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .searchCollection {
   margin: 20px 20px 30px 20px;
-  box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
+  box-shadow: 0 0 27px rgb(231, 166, 142);
 }
 .cardsSection {
   display: grid;
@@ -39,7 +39,6 @@ export default {
   margin: 5px;
 }
 .name {
-  border-top: 2px solid rgba(238, 110, 63, 0.911);
   text-align: left;
   padding-left: 15px;
   text-transform: uppercase;

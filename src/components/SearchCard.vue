@@ -31,13 +31,14 @@ export default {
   },
   data: function() {
     return {
+      id: 3,
       image:
         "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg"
     };
   },
   methods: {
     goToShowPage() {
-      this.$router.push({ path: "/BrowsePage" });
+      this.$router.push({ path: "/ShowPage/" + this.id });
     }
   }
 };
@@ -120,9 +121,9 @@ letter-spacing: 3px;
   border-radius: 5px;
   background-color: rgb(226, 88, 37);
   line-height: 28px;
-  color: white;
+  color:rgba(236, 227, 227, 0.966);
 }
 #watch:hover {
-  text-decoration: underline;
+  color: white;
 }
 </style>
