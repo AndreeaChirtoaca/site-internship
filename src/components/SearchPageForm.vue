@@ -27,10 +27,11 @@ export default {
 .searchForm {
   height: 2.5cm;
   text-align: center;
-  padding-top: 17px;
+  padding-top: 25px;
   padding-left: 30%;
   background-color: rgb(150, 137, 137);
   display: flex;
+  box-sizing: border-box;
 }
 
 .input {

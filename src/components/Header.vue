@@ -5,7 +5,7 @@
         <img class="logo" src="../assets/crunchyroll.jpg">
       </div>
     </router-link>
-    <router-link to="/MostPopular" class="link">Most Popular</router-link>
+    <router-link to="/CategoryPage/1" class="link">Most Popular</router-link>
     <router-link to="/Newest" class="link">Newest</router-link>
     <router-link to="/RecentlyUpdated" class="link">Recently Updated</router-link>
     <router-link to="/SearchPage">
