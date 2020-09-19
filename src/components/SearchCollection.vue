@@ -3,7 +3,7 @@
     <div class="name">NAME</div>
     <div class="cardsSection">
       <div v-for="card in cards">
-        <SearchCard></SearchCard>
+        <SearchCard :ratingCard="ratingCard" :descriptionCard="descriptionCard"></SearchCard>
       </div>
     </div>
   </div>
@@ -18,7 +18,10 @@ export default {
   },
   data: function() {
     return {
-      cards: [1, 2, 3, 4, 5, 6]
+      cards: [1, 2, 3, 4, 5, 6],
+      ratingCard: 4,
+      descriptionCard:
+        "Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past. However throughout their experimentation process, an organization named SERN who has been doing their own research on time travel tracks them down. Now it’s a careful game of cat and mouse to not get caught and moreover, try to survive.Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past."
     };
   }
 };
@@ -26,7 +29,7 @@ export default {
 
 <style scoped>
 .searchCollection {
-  margin: 20px;
+  margin: 30px 20px 30px 20px;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
 }
 .cardsSection {
@@ -35,7 +38,7 @@ export default {
   margin: 5px;
 }
 .name {
-  border-top: 2px solid rgb(238, 110, 63);
+  border-top: 2px solid rgba(238, 110, 63, 0.911);
   text-align: left;
   padding-left: 15px;
   text-transform: uppercase;
