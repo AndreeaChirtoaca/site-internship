@@ -2,7 +2,7 @@
   <header class="header-style">
     <router-link to="/">
       <div class="blockForImage">
-        <img class="logo" src="https://www.soda.com/wp-content/uploads/2020/06/crunchyroll.jpg">
+        <img class="logo" src="../assets/crunchyroll.jpg">
       </div>
     </router-link>
     <router-link to="/MostPopular" class="link">Most Popular</router-link>

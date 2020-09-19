@@ -62,4 +62,7 @@ export default {
   line-height: 28px;
   color: white;
 }
+#browse:hover {
+  text-decoration: underline;
+}
 </style>
