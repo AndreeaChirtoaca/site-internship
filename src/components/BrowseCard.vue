@@ -34,6 +34,7 @@ export default {
 }
 .card:hover {
   box-shadow: 5px 6px 5px 0px rgb(231, 166, 142);
+  height: 105%;
 }
 .image {
   height: 80%;

@@ -89,7 +89,7 @@ export default {
 }
 .description {
   --line-height: 20px;
-  --n-of-lines: 2;
+  --n-of-lines: 4;
   --max-height: calc(var(--line-height)*var(--n-of-lines));
   padding-left: 10px;
   margin: 5px;

@@ -1,10 +1,10 @@
 <template>
   <div class="card">
     <div class="imageContainer">
-      <img class="imageCard" :src="image">
+      <img class="imageCard" :src="imageCard">
     </div>
     <div class="textCard">
-      <div class="title">Steins;Gate</div>
+      <div class="title">{{nameCard}}</div>
       <p class="rating">
         Rating:
         <span>{{ratingCard}}</span> stars
@@ -25,20 +25,18 @@
 export default {
   name: "SearchCard",
   props: {
+    idCard: "",
+    nameCard: String,
     imageCard: String,
     ratingCard: Number,
     descriptionCard: String
   },
   data: function() {
-    return {
-      id: 3,
-      image:
-        "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg"
-    };
+    return {};
   },
   methods: {
     goToShowPage() {
-      this.$router.push({ path: "/ShowPage/" + this.id });
+      this.$router.push({ path: "/ShowPage/" + this.idCard });
     }
   }
 };
@@ -54,6 +52,7 @@ export default {
 }
 .card:hover {
   box-shadow: 0 0 27px rgb(231, 166, 142);
+  margin: 7px 0px 7px 0px;
 }
 .imageContainer {
   height: 100%;
