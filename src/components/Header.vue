@@ -35,6 +35,7 @@ export default {
 .logo {
   width: 130px;
   height: auto;
+  padding-bottom: 5px;
   box-sizing: border-box;
 }
 #icon {
@@ -51,7 +52,7 @@ export default {
   margin: 20px;
 }
 .link:hover {
-  text-decoration: underline;
+  color: rgb(192, 72, 28);
 }
 #search-button {
   height: 30px;
@@ -67,7 +68,8 @@ export default {
     grid-template-rows: 1fr, 1fr, 1fr, 1fr;
   }
   .link {
-    margin: 10px;
+    margin: 5px;
+    padding-bottom: 5px;
   }
   .blockForImage {
     text-align: center;

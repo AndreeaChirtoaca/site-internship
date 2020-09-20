@@ -28,7 +28,7 @@ body {
   margin: 0px;
 }
 .footer {
-  background-color: #fafafa;
+  background-color: white;
   padding: 40px;
 }
 .footer p {
