@@ -2,7 +2,7 @@
   <header class="header-style">
     <router-link to="/">
       <div class="blockForImage">
-        <img class="logo" src="../assets/crunchyroll.jpg">
+        <img class="logo" src="../assets/pika.jpg">
       </div>
     </router-link>
     <router-link to="/CategoryPage/1" class="link">Most Popular</router-link>
@@ -33,7 +33,7 @@ export default {
   box-sizing: border-box;
 }
 .logo {
-  width: 160px;
+  width: 130px;
   height: auto;
   box-sizing: border-box;
 }

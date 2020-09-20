@@ -6,10 +6,7 @@
     </p>
     <router-link to="/">
       <div class="blockForImage">
-        <img
-          class="logo"
-          src="https://download.logo.wine/logo/Crunchyroll/Crunchyroll-Logo.wine.png"
-        >
+        <img class="logo" src="../assets/pika.jpg">
       </div>
     </router-link>
   </footer>
