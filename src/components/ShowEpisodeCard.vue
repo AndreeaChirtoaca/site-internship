@@ -28,12 +28,11 @@ export default {
 <style scoped>
 .card {
   margin: 5px;
+  padding: 2px;
   flex-direction: row;
   width: 24.3%;
   height: 7cm;
-
   box-sizing: border-box;
-  padding: 2px;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
 }
 .card:hover {

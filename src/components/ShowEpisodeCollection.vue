@@ -66,6 +66,8 @@ export default {
 }
 #episode {
   color: rgb(216, 88, 42);
+  padding-left: 10px;
+  padding-top: 10px;
 }
 .episodeCollection {
   display: flex;

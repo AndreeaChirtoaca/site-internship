@@ -34,7 +34,7 @@ export default {
 <style scoped>
 .card {
   display: flex;
-  height: 9cm;
+  height: 10cm;
   margin: 5px 28px 5px 28px;
   padding: 5px;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);

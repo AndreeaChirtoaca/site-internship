@@ -11,6 +11,9 @@
     <div>
       <ShowEpisodeCollection></ShowEpisodeCollection>
     </div>
+    <div>
+      <ShowMetaCollection></ShowMetaCollection>
+    </div>
   </div>
 </template>
 
@@ -18,13 +21,15 @@
 import ShowPageHeader from "./components/ShowPageHeader";
 import ShowDescriptionCard from "./components/ShowDescriptionCard";
 import ShowEpisodeCollection from "./components/ShowEpisodeCollection";
+import ShowMetaCollection from "./components/ShowMetaCollection";
 
 export default {
   name: "ShowPage",
   components: {
     ShowPageHeader,
     ShowDescriptionCard,
-    ShowEpisodeCollection
+    ShowEpisodeCollection,
+    ShowMetaCollection
   },
   data: function() {
     return {
