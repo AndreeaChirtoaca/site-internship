@@ -69,7 +69,7 @@ export default {
 .BrowseCollection {
   background-color: white;
   height: 400px;
-  //border: 2px solid black;
+
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
   margin: 15px;
   text-align: center;
@@ -89,7 +89,6 @@ export default {
 }
 .name {
   height: 10%;
-  //border: 2px solid black;
   margin: 5px;
   padding-left: 15px;
   padding-top: 10px;
@@ -98,7 +97,6 @@ export default {
 .cards {
   display: flex;
   height: 80%;
-  //border: 2px solid black;
   margin: 5px;
   align-items: center;
   box-sizing: border-box;

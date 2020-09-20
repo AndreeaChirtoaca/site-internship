@@ -38,6 +38,7 @@ export default {
 }
 .image {
   height: 80%;
+  padding: 5px;
 }
 .cardImage {
   height: 100%;
@@ -46,7 +47,7 @@ export default {
 }
 .titleContainer {
   height: 17%;
-  padding-top: 10px;
+  padding: 10px;
 }
 .title {
   text-decoration: none;

@@ -31,10 +31,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .card {
   display: flex;
-  height: 10cm;
+  height: 9cm;
   margin: 5px 28px 5px 28px;
   padding: 5px;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
@@ -78,16 +78,18 @@ export default {
   font-size: 20px;
 }
 .description {
-  margin: 0px;
+  margin: 10px;
   padding-left: 5px;
   line-height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 20px;
 }
-#more {
-  padding-left: 10px;
-  font-weight: bold;
-  letter-spacing: 3px;
+@media screen and (max-width: 500px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
 }
 </style>
