@@ -6,7 +6,10 @@
       :image="heroShow.image"
       :description="heroShow.description"
     />
-    <BrowseCollection/>
+    <BrowseCollection name="Most Popular" link="/MostPopular"/>
+    <BrowseCollection name="Newest" link="/Newest"/>
+    <BrowseCollection name="Recently Updated" link="/RecentlyUpdated"/>
+
     <MoreAnime/>
   </div>
 </template>
