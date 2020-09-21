@@ -48,7 +48,7 @@ export default {
 }
 .imageCard {
   object-fit: cover;
-  height: 90%;
+  height: 94%;
   width: 90%;
 }
 .textCard {
@@ -57,7 +57,6 @@ export default {
 }
 .title {
   margin: 3px 0px 5px 3px;
-  text-align: left;
   padding: 10px 0px 0px 5px;
   text-transform: uppercase;
   width: 100%;
@@ -85,11 +84,20 @@ export default {
   text-overflow: ellipsis;
   font-size: 20px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   .card {
     display: flex;
     flex-direction: column;
     height: auto;
+    padding-bottom: 30px;
+  }
+
+  .imageContainer {
+    width: 100%;
+    padding-left: 28px;
+  }
+  .textCard {
+    text-align: center;
   }
 }
 </style>

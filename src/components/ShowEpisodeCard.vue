@@ -61,4 +61,9 @@ export default {
   letter-spacing: 1px;
   padding: 8px;
 }
+@media screen and (max-width: 700px) {
+  .card {
+    width: 47%;
+  }
+}
 </style>

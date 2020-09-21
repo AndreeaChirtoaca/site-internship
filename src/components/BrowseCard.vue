@@ -27,17 +27,17 @@ export default {
 
 <style scoped>
 .card {
+  width: 16%;
   margin: 5px;
-  height: 100%;
+  height: 320px;
   box-sizing: border-box;
   box-shadow: 5px 6px 5px 0px rgba(2, 2, 2, 0.19);
 }
 .card:hover {
-  box-shadow: 5px 6px 5px 0px rgb(231, 166, 142);
-  height: 105%;
+  box-shadow: 0 0 27px rgb(231, 166, 142);
 }
 .image {
-  height: 80%;
+  height: 70%;
   padding: 5px;
 }
 .cardImage {
@@ -46,16 +46,24 @@ export default {
   object-fit: cover;
 }
 .titleContainer {
-  height: 17%;
-  padding: 10px;
+  height: 27%;
+  padding: 20px 10px 10px 10px;
+  width: 96.5%;
 }
 .title {
   text-decoration: none;
   color: black;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 23px;
+  width: 100%;
 }
 .title:hover {
   color: rgb(201, 77, 32);
+}
+@media screen and (max-width: 700px) {
+  .card {
+    width: 100%;
+  }
 }
 </style>

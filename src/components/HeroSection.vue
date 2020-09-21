@@ -136,4 +136,12 @@ color: rgba(226, 87, 37, 0.952)
 .buttonHero:hover {
   color: white;
 }
+/*@media screen and (max-width: 500px){
+.heroSection{
+  flex-direction: column ;
+}
+.heroImageFrame{
+padding:0px;
+}
+}*/
 </style>

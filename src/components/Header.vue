@@ -5,12 +5,12 @@
         <img class="logo" src="../assets/pika.jpg">
       </div>
     </router-link>
-    <router-link to="/CategoryPage/1" class="link">Most Popular</router-link>
+    <router-link to="/MostPopular" class="link">Most Popular</router-link>
     <router-link to="/Newest" class="link">Newest</router-link>
     <router-link to="/RecentlyUpdated" class="link">Recently Updated</router-link>
     <router-link to="/SearchPage">
       <div class="blockForImage">
-        <img id="icon" src="https://img.icons8.com/metro/26/000000/search.png">
+        <img id="icon" src="../assets/search.png">
       </div>
     </router-link>
   </header>
@@ -33,26 +33,30 @@ export default {
   box-sizing: border-box;
 }
 .logo {
-  width: 130px;
+  width: 140px;
   height: auto;
-  padding-bottom: 5px;
-  box-sizing: border-box;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  //box-sizing: border-box;
 }
 #icon {
-  width: 20px;
+  width: 40px;
   height: auto;
-  margin: 25px;
+  margin: 18px;
 }
 .link {
   color: grey;
   text-align: center;
   text-decoration: none;
   font-family: Roboto, sans-serif;
-  font-size: 17px;
+  font-size: 20px;
   margin: 20px;
+  color: rgb(219, 83, 34);
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 .link:hover {
-  color: rgb(192, 72, 28);
+  text-decoration: underline;
+  color: rgb(219, 83, 34);
 }
 #search-button {
   height: 30px;

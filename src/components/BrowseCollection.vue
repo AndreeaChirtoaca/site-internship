@@ -2,33 +2,7 @@
   <div>
     <div class="BrowseCollection">
       <div class="name">
-        <router-link to="/MostPopular" class="link">Most Popular</router-link>
-      </div>
-      <div class="cards">
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-      </div>
-    </div>
-    <div class="BrowseCollection">
-      <div class="name">
-        <router-link to="/Newest" class="link">Newest</router-link>
-      </div>
-      <div class="cards">
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-      </div>
-    </div>
-    <div class="BrowseCollection">
-      <div class="name">
-        <router-link to="/RecentlyUpdated" class="link">Recently Updated</router-link>
+        <router-link :to="link" class="link">{{name}}</router-link>
       </div>
       <div class="cards">
         <BrowseCard/>
@@ -50,11 +24,12 @@ export default {
     BrowseCard
   },
   props: {
-    name: String
+    name: String,
+    link: ""
   },
   data: function() {
     return {
-      cardsMostPupular: [
+      cardsMostPopular: [
         {
           title: "1episode",
           imageURL: ""
@@ -68,8 +43,7 @@ export default {
 <style scoped>
 .BrowseCollection {
   background-color: white;
-  height: 400px;
-
+  width: auto;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
   margin: 15px;
   text-align: center;
@@ -77,7 +51,6 @@ export default {
 }
 .link {
   font-size: 30px;
-  //color: grey;
   color: rgb(226, 88, 37);
   cursor: pointer;
   font-weight: bold;
@@ -96,9 +69,20 @@ export default {
 
 .cards {
   display: flex;
-  height: 80%;
+  height: auto;
+  width: auto;
   margin: 5px;
   align-items: center;
   box-sizing: border-box;
+}
+@media screen and (max-width: 500px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  .BrowseCollection {
+    box-shadow: 0 0 17px rgb(231, 166, 142);
+  }
 }
 </style>

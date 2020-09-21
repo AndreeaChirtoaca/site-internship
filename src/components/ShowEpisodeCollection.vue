@@ -63,6 +63,7 @@ export default {
   height: auto;
   margin: 20px 28px 10px 28px;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
+  align-items: center;
 }
 #episode {
   color: rgb(216, 88, 42);

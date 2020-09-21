@@ -59,4 +59,16 @@ export default {
   color: grey;
   margin-bottom: 5px;
 }
+@media screen and (max-width: 700px) {
+  .cardsSection {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .searchCollection {
+    box-shadow: 0 0 27px rgb(231, 166, 142);
+  }
+  .name {
+    color: rgb(226, 88, 37);
+  }
+}
 </style>

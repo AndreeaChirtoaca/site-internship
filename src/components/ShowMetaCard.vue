@@ -66,4 +66,9 @@ export default {
   width: 90%;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
+@media screen and (max-width: 700px) {
+  .card {
+    width: 46.8%;
+  }
+}
 </style>
