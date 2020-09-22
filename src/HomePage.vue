@@ -1,10 +1,10 @@
 <template>
   <div>
     <HeroSection
-      :title="heroShow.title"
-      :subtitle="heroShow.subtitle"
-      :image="heroShow.image"
+      :title="heroShow.canonicalTitle"
+      :image="heroShow.posterImage.original"
       :description="heroShow.description"
+      :id="idHero"
     />
     <BrowseCollection name="Most Popular" link="/MostPopular"/>
     <BrowseCollection name="Newest" link="/Newest"/>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import HeroSection from "./components/HeroSection";
 import BrowseCollection from "./components/BrowseCollection";
 import MoreAnime from "./components/MoreAnime";
@@ -27,14 +28,16 @@ export default {
   },
   data: function() {
     return {
-      heroShow: {
-        title: "Steins;Gate",
-        image:
-          "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
-        description:
-          "Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past. However throughout their experimentation process, an organization named SERN who has been doing their own research on time travel tracks them down. Now it’s a careful game of cat and mouse to not get caught and moreover, try to survive.Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past. However throughout their experimentation process, an organization named SERN who has been doing their own research on time travel tracks them down. Now it’s a careful game of cat and mouse to not get caught and moreover, try to survive"
-      }
+      heroShow: {},
+      idHero: "4"
     };
+  },
+  created: function() {
+    const arl = "https://kitsu.io/api/edge/anime/" + this.idHero;
+    axios.get(arl).then(response => {
+      //console.log(response.data.data.attributes);
+      this.heroShow = response.data.data.attributes;
+    });
   }
 };
 </script>

@@ -3,57 +3,40 @@
     <h2 id="episode">EPISODES</h2>
     <div class="episodeCollection">
       <ShowEpisodeCard
-        :image="episode.image"
-        :title="episode.title"
-        :ep="episode.ep"
-        :season="episode.season"
-      ></ShowEpisodeCard>
-      <ShowEpisodeCard
-        :image="episode.image"
-        :title="episode.title"
-        :ep="episode.ep"
-        :season="episode.season"
-      ></ShowEpisodeCard>
-      <ShowEpisodeCard
-        :image="episode.image"
-        :title="episode.title"
-        :ep="episode.ep"
-        :season="episode.season"
-      ></ShowEpisodeCard>
-      <ShowEpisodeCard
-        :image="episode.image"
-        :title="episode.title"
-        :ep="episode.ep"
-        :season="episode.season"
-      ></ShowEpisodeCard>
-      <ShowEpisodeCard
-        :image="episode.image"
-        :title="episode.title"
-        :ep="episode.ep"
-        :season="episode.season"
+        v-for="(episode,index) in episodes"
+        :key="index"
+        :idShow="episode.id"
+        :canonicalTitle="episode.attributes.canonicalTitle"
+        :seasonNumber="episode.attributes.seasonNumber"
+        :number="episode.attributes.number"
+        :imageEpisode="episode.attributes.thumbnail.original"
       ></ShowEpisodeCard>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import ShowEpisodeCard from "./ShowEpisodeCard";
 export default {
   name: "ShowEpisodeCollection",
   components: {
     ShowEpisodeCard
   },
+  props: {
+    idShow: String
+  },
   data: function() {
     return {
-      episods: [1, 2, 3, 4, 5, 6],
-      episode: {
-        image:
-          "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
-        title: "hahaha",
-        ep: 1,
-        season: 2
-      }
+      episodes: {}
     };
+  },
+  created: function() {
+    const url = "https://kitsu.io/api/edge/anime/" + this.idShow + "/episodes";
+    axios.get(url).then(response => {
+      //console.log(response.data.data);
+      this.episodes = response.data.data;
+    });
   }
 };
 </script>
@@ -74,5 +57,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+@media screen and (max-width: 500px) {
 }
 </style>

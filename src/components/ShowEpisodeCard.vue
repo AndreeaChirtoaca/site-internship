@@ -1,11 +1,11 @@
 <template>
   <div class="card">
     <div class="imageContainer">
-      <img class="imageEpisode" :src="image">
+      <img class="imageEpisode" :src="imageEpisode">
     </div>
     <div class="info">
-      <p id="title">{{title}}</p>
-      <p id="episode">Season:{{season}} Episode:{{ep}}</p>
+      <p id="title">{{canonicalTitle}}</p>
+      <p id="episode">Season:{{seasonNumber}} Episode:{{number}}</p>
     </div>
   </div>
 </template>
@@ -14,10 +14,11 @@
 export default {
   name: "ShowEpisodeCard",
   props: {
-    image: String,
-    title: String,
-    ep: Number,
-    season: Number
+    idEpisode: String,
+    canonicalTitle: String,
+    seasonNumber: Number,
+    number: Number,
+    imageEpisode: String
   },
   data: function() {
     return {};
@@ -53,7 +54,7 @@ export default {
   text-transform: uppercase;
   width: 100%;
   font-weight: bold;
-  padding: 10px 3px 2px 8px;
+  padding: 5px 3px 2px 8px;
 }
 #episode {
   font-size: 12px;

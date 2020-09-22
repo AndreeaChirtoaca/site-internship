@@ -7,7 +7,7 @@
       <div class="title">{{titleShow}}</div>
       <div class="subtitle">{{subtitleShow}}</div>
       <p class="rating">
-        Rating:
+        Popularity Rank:
         <span>{{ratingShow}}</span> stars
       </p>
       <p class="description">{{descriptionShow}}</p>
@@ -21,7 +21,7 @@ export default {
   props: {
     titleShow: String,
     subtitleShow: String,
-    ratingShow: String,
+    ratingShow: Number,
     imageShow: String,
     descriptionShow: String
   },
@@ -42,14 +42,17 @@ export default {
 
 .imageContainer {
   height: 100%;
-  width: 50%;
+  position: relative;
+  width: 30%;
   padding-top: 10px;
   padding-left: 10px;
 }
 .imageCard {
   object-fit: cover;
-  height: 94%;
-  width: 90%;
+  height: 9cm;
+  position: absolute;
+  left: 20;
+  top: 30;
 }
 .textCard {
   height: 100%;
@@ -95,6 +98,9 @@ export default {
   .imageContainer {
     width: 100%;
     padding-left: 28px;
+  }
+  .imageCard {
+    position: static;
   }
   .textCard {
     text-align: center;

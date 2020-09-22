@@ -15,6 +15,7 @@
 <script>
 export default {
   name: "ShowMetaCard",
+
   data: function() {
     return {
       image:

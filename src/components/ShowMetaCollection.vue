@@ -17,6 +17,9 @@ export default {
   components: {
     ShowMetaCard
   },
+  props: {
+    idShow: String
+  },
   data: function() {
     return {};
   }

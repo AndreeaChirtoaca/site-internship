@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vue/cli-plugin-babel": "4.1.1",
+    "axios": "0.20.0",
     "vue": "^2.6.11",
     "vue-router": "3.4.3"
   },

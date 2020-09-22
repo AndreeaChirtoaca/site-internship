@@ -24,7 +24,7 @@ export default {
     subtitle: String,
     description: String,
     image: String,
-    id: 4
+    id: String
   },
   data: function() {
     return {

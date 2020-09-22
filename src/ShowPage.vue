@@ -1,15 +1,15 @@
 <template>
   <div>
-    <ShowPageHeader :trailer="trailer"></ShowPageHeader>
+    <ShowPageHeader :trailer="video"></ShowPageHeader>
     <ShowDescriptionCard
-      :titleShow="dataShowCard.titleShow"
-      :subtitleShow="dataShowCard.subtitleShow"
-      :ratingShow="dataShowCard.ratingShow"
-      :imageShow="dataShowCard.imageShow"
-      :descriptionShow="dataShowCard.descriptionShow"
+      :titleShow="dataShow.canonicalTitle"
+      :subtitleShow="dataShow.subtitleShow"
+      :ratingShow="dataShow.popularityRank"
+      :imageShow="dataShow.posterImage.medium"
+      :descriptionShow="dataShow.description"
     ></ShowDescriptionCard>
     <div>
-      <ShowEpisodeCollection></ShowEpisodeCollection>
+      <ShowEpisodeCollection :idShow="id"></ShowEpisodeCollection>
     </div>
     <div>
       <ShowMetaCollection></ShowMetaCollection>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import ShowPageHeader from "./components/ShowPageHeader";
 import ShowDescriptionCard from "./components/ShowDescriptionCard";
 import ShowEpisodeCollection from "./components/ShowEpisodeCollection";
@@ -33,17 +34,27 @@ export default {
   },
   data: function() {
     return {
+      id: "",
+      dataShow: {},
       trailer: "https://www.youtube.com/embed/2QTDcffpunY?list=RD2QTDcffpunY",
-      dataShowCard: {
-        titleShow: "Steins;Gate",
-        subtitleShow: "SMTH",
-        ratingShow: "4",
-        imageShow:
-          "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
-        descriptionShow:
-          "    Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past. However throughout their experimentation process, an organization named SERN who has been doing their own research on time travel tracks them down. Now it’s a careful game of cat and mouse to not get caught and moreover, try to survive."
-      }
+      trailerId: ""
     };
+  },
+  computed: {
+    video: function() {
+      return "https://www.youtube.com/embed/" + this.trailerId;
+    }
+  },
+  created: function() {
+    this.id = this.$route.params.id;
+    const url = "https://kitsu.io/api/edge/anime/" + this.id;
+
+    axios.get(url).then(response => {
+      console.log(response.data.data);
+      this.dataShow = response.data.data.attributes;
+      this.trailerId = response.data.data.attributes.youtubeVideoId;
+      //console.log(this.video)
+    });
   }
 };
 </script>
