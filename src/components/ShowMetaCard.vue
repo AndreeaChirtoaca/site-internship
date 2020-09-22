@@ -20,7 +20,7 @@ export default {
       image:
         "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
       name: "hegefrgq3",
-      description: "wekfrerghtg"
+      description: "wekfre"
     };
   }
 };

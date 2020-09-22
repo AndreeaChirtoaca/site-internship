@@ -48,7 +48,6 @@ export default {
   padding: 10px;
   background: var(--background-color);
   display: flex;
-  align-items: start;
   margin: 15px;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
   
@@ -58,7 +57,6 @@ export default {
   padding: 25px 20px 20px 20px;
 }
 .heroImage {
-  margin: 0;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -73,7 +71,6 @@ export default {
 }
 .showImage {
   margin: 0px;
-  border-bottom: 2px solid black;
   padding: auto;
   flex: 0 0 200px;
   max-width: 200px;
@@ -136,12 +133,12 @@ color: rgba(226, 87, 37, 0.952)
 .buttonHero:hover {
   color: white;
 }
-/*@media screen and (max-width: 500px){
+@media screen and (max-width: 500px){
 .heroSection{
   flex-direction: column ;
 }
-.heroImageFrame{
-padding:0px;
+.heroImage{
+  left: 35px;
 }
-}*/
+}
 </style>
