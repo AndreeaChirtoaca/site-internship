@@ -1,15 +1,14 @@
 <template>
-  <div>
+  <div class="home">
     <HeroSection
       :title="heroShow.canonicalTitle"
       :image="heroShow.posterImage.original"
       :description="heroShow.description"
       :id="idHero"
     />
-    <BrowseCollection name="Most Popular" link="/MostPopular" :animeMostPopular="animeMostPopular"/>
-
-    <BrowseCollection name="Recently Updated" link="/RecentlyUpdated" :animeUpdated="animeUpdated"/>
-    <BrowseCollection name="Newest" link="/Newest" :animeNewest="animeNewest"/>
+    <BrowseCollection name="Most Popular" link="/MostPopular"/>
+    <BrowseCollection name="Recently Updated" link="/RecentlyUpdated"/>
+    <BrowseCollection name="Newest" link="/Newest"/>
     <MoreAnime/>
   </div>
 </template>
@@ -29,45 +28,19 @@ export default {
   data: function() {
     return {
       heroShow: [{}],
-      idHero: "4",
-      animeMostPopular: [{}, {}, {}, {}, {}, {}],
-      animeUpdated: [{}, {}, {}, {}, {}, {}],
-      animeNewest: [{}, {}, {}, {}, {}, {}]
+      idHero: "4"
     };
   },
-  mounted: function() {
-    let i = null;
+  created: function() {
     const arl = "https://kitsu.io/api/edge/anime/" + this.idHero;
     axios.get(arl).then(response => {
-      //console.log(response.data.data.attributes);
       this.heroShow = response.data.data.attributes;
     });
-    axios
-      .get("https://kitsu.io/api/edge/anime?sort=-popularityRank")
-      .then(response => {
-        //console.log(response.data.data[1]);
-        for (i = 0; i <= 5; i++) {
-          this.animeMostPopular[i] = response.data.data[i];
-        }
-        //console.log( this.animeMostPopular)
-      });
-    axios
-      .get("https://kitsu.io/api/edge/anime?sort=-updatedAt")
-      .then(response => {
-        for (i = 0; i <= 5; i++) {
-          this.animeUpdated[i] = response.data.data[i];
-        }
-      });
-    axios
-      .get("https://kitsu.io/api/edge/anime?sort=-createdAt")
-      .then(response => {
-        for (i = 0; i <= 5; i++) {
-          this.animeNewest[i] = response.data.data[i];
-        }
-      });
   }
 };
 </script>
 
-<style>
+<style scoped>
+.home {
+}
 </style>

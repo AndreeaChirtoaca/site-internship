@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import BrowseCard from "./BrowseCard.vue";
 export default {
   name: "BrowseCollection",
@@ -34,24 +35,35 @@ export default {
   data: function() {
     return {
       internalName: this.name,
-      cardsPopular: this.animeMostPopular,
-      cardsUpdated: this.animeUpdated,
-      cardsNewest: this.animeNewest,
-      cards: null
+      cards: [{}, {}, {}, {}, {}, {}]
     };
   },
-  mounted: function() {
+  created: function() {
+    let i = null;
     if (this.internalName === "Most Popular") {
-      this.cards = this.cardsPopular;
-      //console.log(this.cards)
-    }
-    if (this.internalName === "Recently Updated") {
-      this.cards = this.cardsUpdated;
-      //console.log(4)
-    }
-    if (this.internalName === "Newest") {
-      this.cards = this.cardsNewest;
-      //console.log(4)
+      axios
+        .get("https://kitsu.io/api/edge/anime?sort=-popularityRank")
+        .then(response => {
+          for (i = 0; i <= 5; i++) {
+            this.cards[i] = response.data.data[i];
+          }
+        });
+    } else if (this.internalName === "Recently Updated") {
+      axios
+        .get("https://kitsu.io/api/edge/anime?sort=-updatedAt")
+        .then(response => {
+          for (i = 0; i <= 5; i++) {
+            this.cards[i] = response.data.data[i];
+          }
+        });
+    } else if (this.internalName === "Newest") {
+      axios
+        .get("https://kitsu.io/api/edge/anime?sort=-createdAt")
+        .then(response => {
+          for (i = 0; i <= 5; i++) {
+            this.cards[i] = response.data.data[i];
+          }
+        });
     }
   }
 };
