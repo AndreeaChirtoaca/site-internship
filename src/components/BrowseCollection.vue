@@ -5,12 +5,13 @@
         <router-link :to="link" class="link">{{name}}</router-link>
       </div>
       <div class="cards">
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
-        <BrowseCard/>
+        <BrowseCard
+          v-for="(card,index) in cards"
+          :key="index"
+          :nameCard="card.attributes.canonicalTitle"
+          :idCard="card.id"
+          :imageCard="card.attributes.posterImage.original"
+        />
       </div>
     </div>
   </div>
@@ -25,17 +26,33 @@ export default {
   },
   props: {
     name: String,
-    link: ""
+    link: "",
+    animeMostPopular: null,
+    animeUpdated: null,
+    animeNewest: null
   },
   data: function() {
     return {
-      cardsMostPopular: [
-        {
-          title: "1episode",
-          imageURL: ""
-        }
-      ]
+      internalName: this.name,
+      cardsPopular: this.animeMostPopular,
+      cardsUpdated: this.animeUpdated,
+      cardsNewest: this.animeNewest,
+      cards: null
     };
+  },
+  mounted: function() {
+    if (this.internalName === "Most Popular") {
+      this.cards = this.cardsPopular;
+      //console.log(this.cards)
+    }
+    if (this.internalName === "Recently Updated") {
+      this.cards = this.cardsUpdated;
+      //console.log(4)
+    }
+    if (this.internalName === "Newest") {
+      this.cards = this.cardsNewest;
+      //console.log(4)
+    }
   }
 };
 </script>

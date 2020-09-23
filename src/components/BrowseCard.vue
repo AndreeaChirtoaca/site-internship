@@ -2,11 +2,11 @@
   <div class="card">
     <div class="image">
       <router-link :to="{path: '/ShowPage/' +id}">
-        <img class="cardImage" :src="imageShow">
+        <img class="cardImage" :src="imageCard">
       </router-link>
     </div>
     <div class="titleContainer">
-      <router-link :to="{path: '/ShowPage/' +id}" class="title">{{nameShow}}</router-link>
+      <router-link :to="{path: '/ShowPage/' +id}" class="title">{{nameCard}}</router-link>
     </div>
   </div>
 </template>
@@ -14,11 +14,16 @@
 <script>
 export default {
   name: "BrowseCard",
+  props: {
+    idCard: String,
+    nameCard: String,
+    imageCard: String
+  },
   data: function() {
     return {
       imageShow:
         "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
-      id: 4,
+      id: this.idCard,
       nameShow: "Steins;Gate"
     };
   }
@@ -47,7 +52,7 @@ export default {
 }
 .titleContainer {
   height: 27%;
-  padding: 20px 10px 10px 10px;
+  padding: 12px 10px 10px 10px;
   width: 96.5%;
 }
 .title {
@@ -55,7 +60,9 @@ export default {
   color: black;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 20px;
+  max-height: 2cm;
+  overflow: hidden;
   width: 100%;
 }
 .title:hover {

@@ -50,7 +50,7 @@ export default {
     const url = "https://kitsu.io/api/edge/anime/" + this.id;
 
     axios.get(url).then(response => {
-      console.log(response.data.data);
+      //console.log(response.data.data);
       this.dataShow = response.data.data.attributes;
       this.trailerId = response.data.data.attributes.youtubeVideoId;
       //console.log(this.video)
