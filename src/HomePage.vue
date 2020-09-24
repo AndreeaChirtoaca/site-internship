@@ -6,10 +6,10 @@
       :description="heroShow.description"
       :id="idHero"
     />
-    <BrowseCollection name="Most Popular" link="/MostPopular"/>
-    <BrowseCollection name="Recently Updated" link="/RecentlyUpdated"/>
-    <BrowseCollection name="Newest" link="/Newest"/>
-    <MoreAnime/>
+    <BrowseCollection name="Most Popular" link="/MostPopular" />
+    <BrowseCollection name="Recently Updated" link="/RecentlyUpdated" />
+    <BrowseCollection name="Newest" link="/Newest" />
+    <MoreAnime />
   </div>
 </template>
 
@@ -23,24 +23,24 @@ export default {
   components: {
     HeroSection,
     BrowseCollection,
-    MoreAnime
+    MoreAnime,
   },
-  data: function() {
+  data: function () {
     return {
-      heroShow: [{}],
-      idHero: "4"
+      heroShow: null,
+      idHero: null,
     };
   },
-  beforeMount: function() {
-    const arl = "https://kitsu.io/api/edge/anime/" + this.idHero;
-    axios.get(arl).then(response => {
-      this.heroShow = response.data.data.attributes;
+  created: function () {
+    const arl = "https://kitsu.io/api/edge/trending/anime";
+    axios.get(arl).then((response) => {
+      //console.log(response.data.data[0]);
+      this.heroShow = response.data.data[0].attributes;
+      this.idHero = response.data.data[0].id;
     });
-  }
+  },
 };
 </script>
 
 <style scoped>
-.home {
-}
 </style>
