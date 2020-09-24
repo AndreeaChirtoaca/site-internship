@@ -11,6 +11,8 @@ import ShowPage from "./ShowPage";
 import BrowsePage from "./BrowsePage";
 import CategoryPage from "./CategoryPage";
 
+import store from "./store/store";
+
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
@@ -35,5 +37,6 @@ const router = new VueRouter({
 
 new Vue({
   render: (h) => h(App),
-  router: router
+  router: router,
+  store: store
 }).$mount("#app");

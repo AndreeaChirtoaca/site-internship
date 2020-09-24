@@ -1,15 +1,15 @@
 <template>
   <div class="card">
     <div class="imageContainer">
-      <img class="imageCard" :src="imageCard">
+      <img class="imageCard" :src="imageCard" />
     </div>
     <div class="textCard">
-      <div class="title">{{nameCard}}</div>
+      <div class="title">{{ nameCard }}</div>
       <p class="rating">
         Rating:
-        <span>{{ratingCard}}</span> stars
+        <span>{{ ratingCard }}</span> stars
       </p>
-      <p class="description">{{descriptionCard}}</p>
+      <p class="description">{{ descriptionCard }}</p>
       <div id="more">
         <span>...</span>
       </div>
@@ -25,20 +25,20 @@
 export default {
   name: "SearchCard",
   props: {
-    idCard: "",
+    idCard: String,
     nameCard: String,
     imageCard: String,
     ratingCard: Number,
-    descriptionCard: String
+    descriptionCard: String,
   },
-  data: function() {
+  data: function () {
     return {};
   },
   methods: {
     goToShowPage() {
       this.$router.push({ path: "/ShowPage/" + this.idCard });
-    }
-  }
+    },
+  },
 };
 </script>
 

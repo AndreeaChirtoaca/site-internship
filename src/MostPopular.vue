@@ -6,7 +6,7 @@
     <div class="categoryList">
       <div>
         <SearchCard
-          v-for="(card,index) in allCards"
+          v-for="(card, index) in allCards"
           :key="index"
           :nameCard="card.attributes.canonicalTitle"
           :imageCard="card.attributes.posterImage.original"
@@ -20,26 +20,20 @@
 </template>
 
 <script>
-import axios from "axios";
 import SearchCard from "./components/SearchCard";
 export default {
   name: "MostPopular",
-  data: function() {
-    return {
-      allCards: null
-    };
+  created: function () {
+    this.$store.dispatch("fetchPopular");
   },
-  created: function() {
-    axios
-      .get("https://kitsu.io/api/edge/anime?sort=popularityRank")
-      .then(response => {
-        //console.log(response.data.data);
-        this.allCards = response.data.data;
-      });
+  computed: {
+    allCards: function () {
+      return this.$store.state.mostPopular.cards;
+    },
   },
   components: {
-    SearchCard
-  }
+    SearchCard,
+  },
 };
 </script>
 
