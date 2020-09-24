@@ -31,7 +31,7 @@ export default {
       idHero: "4"
     };
   },
-  created: function() {
+  beforeMount: function() {
     const arl = "https://kitsu.io/api/edge/anime/" + this.idHero;
     axios.get(arl).then(response => {
       this.heroShow = response.data.data.attributes;

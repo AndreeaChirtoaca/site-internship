@@ -50,6 +50,7 @@ body {
 }
 .blockForImage {
   text-align: center;
+  padding-top: 10px;
 }
 @media screen and (max-width: 500px) {
   .footer {

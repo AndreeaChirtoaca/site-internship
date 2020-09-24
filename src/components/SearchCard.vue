@@ -70,13 +70,15 @@ export default {
   width: 100%;
 }
 .title {
-  margin-top: 10px;
+  margin-top: 5px;
   text-align: left;
-  padding: 10px 0px 0px 5px;
+  padding: 10px 0px 10px 5px;
   text-transform: uppercase;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   height: 1cm;
-  //border: 1px solid black;
+  max-height: 2cm ;
   font-size: 23px;
   font-weight: bold;
 }

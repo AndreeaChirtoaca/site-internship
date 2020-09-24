@@ -38,7 +38,7 @@ export default {
       cards: [{}, {}, {}, {}, {}, {}]
     };
   },
-  created: function() {
+  beforeMount: function() {
     let i = null;
     if (this.internalName === "Most Popular") {
       axios

@@ -1,16 +1,18 @@
 <template>
   <div class="categoryPage">
     <div class="categoryName">
-      <h1>{{categoryName}}</h1>
+      <h1>Most Popular</h1>
     </div>
     <div class="categoryList">
-      <div v-for="card in cards">
+      <div>
         <SearchCard
-          :nameCard="dataCard.nameCard"
-          :imageCard="dataCard.imageCard"
-          :idCard="dataCard.idCard"
-          :ratingCard="dataCard.ratingCard"
-          :descriptionCard="dataCard.descriptionCard"
+          v-for="(card,index) in allCards"
+          :key="index"
+          :nameCard="card.attributes.canonicalTitle"
+          :imageCard="card.attributes.posterImage.original"
+          :idCard="card.id"
+          :ratingCard="card.attributes.ratingRank"
+          :descriptionCard="card.attributes.synopsis"
         ></SearchCard>
       </div>
     </div>
@@ -18,23 +20,22 @@
 </template>
 
 <script>
+import axios from "axios";
 import SearchCard from "./components/SearchCard";
 export default {
   name: "MostPopular",
   data: function() {
     return {
-      categoryName: "Most Popular",
-      cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      dataCard: {
-        nameCard: "Steins;Gate",
-        idCard: 3,
-        imageCard:
-          "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
-        ratingCard: 4,
-        descriptionCard:
-          "Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past. However throughout their experimentation process, an organization named SERN who has been doing their own research on time travel tracks them down. Now it’s a careful game of cat and mouse to not get caught and moreover, try to survive.Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past."
-      }
+      allCards: null
     };
+  },
+  created: function() {
+    axios
+      .get("https://kitsu.io/api/edge/anime?sort=popularityRank")
+      .then(response => {
+        //console.log(response.data.data);
+        this.allCards = response.data.data;
+      });
   },
   components: {
     SearchCard
