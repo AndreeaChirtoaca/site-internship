@@ -1,12 +1,14 @@
 <template>
   <div class="card">
     <div class="image">
-      <router-link :to="{path: '/ShowPage/' +id}">
-        <img class="cardImage" :src="imageCard">
+      <router-link :to="{ path: '/ShowPage/' + id }">
+        <img class="cardImage" :src="imageCard" />
       </router-link>
     </div>
     <div class="titleContainer">
-      <router-link :to="{path: '/ShowPage/' +id}" class="title">{{nameCard}}</router-link>
+      <router-link :to="{ path: '/ShowPage/' + id }" class="title">{{
+        nameCard
+      }}</router-link>
     </div>
   </div>
 </template>
@@ -17,16 +19,16 @@ export default {
   props: {
     idCard: String,
     nameCard: String,
-    imageCard: String
+    imageCard: String,
   },
-  data: function() {
+  data: function () {
     return {
       imageShow:
         "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
       id: this.idCard,
-      nameShow: "Steins;Gate"
+      nameShow: "Steins;Gate",
     };
-  }
+  },
 };
 </script>
 

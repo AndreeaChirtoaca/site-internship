@@ -2,12 +2,13 @@
   <div>
     <div class="BrowseCollection">
       <div class="name">
-        <router-link :to="link" class="link">{{name}}</router-link>
+        <router-link :to="link" class="link">{{ name }}</router-link>
       </div>
+
       <div class="cards">
         <BrowseCard
-          v-for="(card,index) in cards"
-          :key="index"
+          v-for="card in cardsGeneral"
+          :key="card.id"
           :nameCard="card.attributes.canonicalTitle"
           :idCard="card.id"
           :imageCard="card.attributes.posterImage.original"
@@ -18,57 +19,28 @@
 </template>
 
 <script>
-import axios from "axios";
 import BrowseCard from "./BrowseCard.vue";
 export default {
   name: "BrowseCollection",
   components: {
-    BrowseCard
+    BrowseCard,
   },
   props: {
     name: String,
-    link: "",
-    animeMostPopular: null,
-    animeUpdated: null,
-    animeNewest: null
+    link: String,
+    cards: null,
   },
-  data: function() {
+  data: function () {
     return {
       internalName: this.name,
-      cards: [{}, {}, {}, {}, {}, {}]
+      cardsGeneral: this.cards,
     };
   },
-  beforeMount: function() {
-    let i = null;
-    if (this.internalName === "Most Popular") {
-      axios
-        .get("https://kitsu.io/api/edge/anime?sort=-popularityRank")
-        .then(response => {
-          for (i = 0; i <= 5; i++) {
-            this.cards[i] = response.data.data[i];
-          }
-        });
-    } else if (this.internalName === "Recently Updated") {
-      axios
-        .get("https://kitsu.io/api/edge/anime?sort=-updatedAt")
-        .then(response => {
-          for (i = 0; i <= 5; i++) {
-            this.cards[i] = response.data.data[i];
-          }
-        });
-    } else if (this.internalName === "Newest") {
-      axios
-        .get("https://kitsu.io/api/edge/anime?sort=-createdAt")
-        .then(response => {
-          for (i = 0; i <= 5; i++) {
-            this.cards[i] = response.data.data[i];
-          }
-        });
-    }
-  }
+  created: function () {
+    this.cardsGeneral = this.cards;
+  },
 };
 </script>
-
 <style scoped>
 .BrowseCollection {
   background-color: white;

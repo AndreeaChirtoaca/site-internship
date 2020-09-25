@@ -6,9 +6,21 @@
       :description="heroShow.description"
       :id="idHero"
     />
-    <BrowseCollection name="Most Popular" link="/MostPopular" />
-    <BrowseCollection name="Recently Updated" link="/RecentlyUpdated" />
-    <BrowseCollection name="Newest" link="/Newest" />
+    <BrowseCollection
+      name="Most Popular"
+      link="/MostPopular"
+      :cards="cardsPopularCollection"
+    />
+    <BrowseCollection
+      name="Recently Updated"
+      link="/RecentlyUpdated"
+      :cards="cardsPopularCollection"
+    />
+    <BrowseCollection
+      name="Newest"
+      link="/Newest"
+      :cards="cardsPopularCollection"
+    />
     <MoreAnime />
   </div>
 </template>
@@ -31,7 +43,17 @@ export default {
       idHero: null,
     };
   },
+  computed: {
+    cardsPopularCollection: function () {
+      return this.$store.state.browseCollection.cardsPopular;
+    },
+    cardsNewestCollection: function () {
+      return this.$store.browseCollection.cardsNewest;
+    },
+  },
   created: function () {
+    this.$store.dispatch("fetch6popular");
+    this.$store.dispatch("fetch6newest");
     const arl = "https://kitsu.io/api/edge/trending/anime";
     axios.get(arl).then((response) => {
       //console.log(response.data.data[0]);
