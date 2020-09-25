@@ -12,6 +12,9 @@ const browseCollection = {
     },
     save6newest: function (state, data) {
       state.cardsNewest = data;
+    },
+    save6updated: function (state, data) {
+      state.cardsUpdated = data;
     }
   },
   actions: {
@@ -31,6 +34,15 @@ const browseCollection = {
         )
         .then(function ({ data }) {
           context.commit("save6newest", data.data);
+        });
+    },
+    fetch6updated: function (context) {
+      axios
+        .get(
+          "https://kitsu.io/api/edge/anime?page[limit]=6&page[offset]=0&sort=-updatedAt"
+        )
+        .then(function ({ data }) {
+          context.commit("save6updated");
         });
     }
   },

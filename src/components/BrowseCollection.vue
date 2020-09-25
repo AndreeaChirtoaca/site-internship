@@ -7,7 +7,7 @@
 
       <div class="cards">
         <BrowseCard
-          v-for="card in cardsGeneral"
+          v-for="card in allCards"
           :key="card.id"
           :nameCard="card.attributes.canonicalTitle"
           :idCard="card.id"
@@ -28,16 +28,38 @@ export default {
   props: {
     name: String,
     link: String,
-    cards: null,
   },
   data: function () {
     return {
       internalName: this.name,
-      cardsGeneral: this.cards,
+      allCards: null,
     };
   },
+  computed: {
+    cardsM: function () {
+      return this.$store.state.browseCollection.cardsPopular;
+    },
+    cardsN: function () {
+      return this.$store.state.browseCollection.cardsNewest;
+    },
+    cardsU: function () {
+      return this.$store.state.browseCollection.cardsUpdated;
+    },
+  },
   created: function () {
-    this.cardsGeneral = this.cards;
+    this.$store.dispatch("fetch6newest");
+    this.$store.dispatch("fetch6updated");
+    this.$store.dispatch("fetch6popular");
+    if (this.internalName === "Recently Updated") {
+      this.allCards = this.cardsU;
+    }
+    if (this.internalName === "Newest") {
+      this.allCards = this.cardsN;
+    }
+
+    if (this.internalName === "Most Popular") {
+      this.allCards = this.cardsM;
+    }
   },
 };
 </script>
