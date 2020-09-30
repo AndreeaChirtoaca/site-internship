@@ -3,7 +3,7 @@
     <h2 id="episode">EPISODES</h2>
     <div class="episodeCollection">
       <ShowEpisodeCard
-        v-for="(episode,index) in episodes"
+        v-for="(episode, index) in episodes"
         :key="index"
         :idShow="episode.id"
         :canonicalTitle="episode.attributes.canonicalTitle"
@@ -21,23 +21,23 @@ import ShowEpisodeCard from "./ShowEpisodeCard";
 export default {
   name: "ShowEpisodeCollection",
   components: {
-    ShowEpisodeCard
+    ShowEpisodeCard,
   },
   props: {
-    idShow: String
+    idShow: String,
   },
-  data: function() {
+  data: function () {
     return {
-      episodes: {}
+      episodes: {},
     };
   },
-  created: function() {
+  created: function () {
     const url = "https://kitsu.io/api/edge/anime/" + this.idShow + "/episodes";
-    axios.get(url).then(response => {
+    axios.get(url).then((response) => {
       //console.log(response.data.data);
       this.episodes = response.data.data;
     });
-  }
+  },
 };
 </script>
 

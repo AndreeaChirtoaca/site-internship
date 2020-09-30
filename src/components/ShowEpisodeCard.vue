@@ -1,11 +1,11 @@
 <template>
   <div class="card">
     <div class="imageContainer">
-      <img class="imageEpisode" :src="imageEpisode">
+      <img class="imageEpisode" :src="imageEpisode" />
     </div>
     <div class="info">
-      <p id="title">{{canonicalTitle}}</p>
-      <p id="episode">Season:{{seasonNumber}} Episode:{{number}}</p>
+      <p id="title">{{ canonicalTitle }}</p>
+      <p id="episode">Season:{{ seasonNumber }} Episode:{{ number }}</p>
     </div>
   </div>
 </template>
@@ -18,11 +18,11 @@ export default {
     canonicalTitle: String,
     seasonNumber: Number,
     number: Number,
-    imageEpisode: String
+    imageEpisode: String,
   },
-  data: function() {
+  data: function () {
     return {};
-  }
+  },
 };
 </script>
 
@@ -31,7 +31,7 @@ export default {
   margin: 5px;
   padding: 2px;
   flex-direction: row;
-  width: 24.3%;
+  width: 24.2%;
   height: 7cm;
   box-sizing: border-box;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
@@ -64,7 +64,7 @@ export default {
 }
 @media screen and (max-width: 700px) {
   .card {
-    width: 47%;
+    width: 99%;
   }
 }
 </style>

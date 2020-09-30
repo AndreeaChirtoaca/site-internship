@@ -9,9 +9,9 @@
         <BrowseCard
           v-for="card in allCards"
           :key="card.id"
-          :nameCard="card.attributes.canonicalTitle"
+          :nameCard="card.title"
           :idCard="card.id"
-          :imageCard="card.attributes.posterImage.original"
+          :imageCard="card.image"
         />
       </div>
     </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import BrowseCard from "./BrowseCard.vue";
+import BrowseCard from "./components/BrowseCard.vue";
 export default {
   name: "BrowseCollection",
   components: {
@@ -32,34 +32,37 @@ export default {
   data: function () {
     return {
       internalName: this.name,
-      allCards: null,
+      allCards: []
     };
   },
   computed: {
-    cardsM: function () {
-      return this.$store.state.browseCollection.cardsPopular;
+    popularCards: function (){
+      return  this.$store.state.browseCollection.popular;
     },
-    cardsN: function () {
-      return this.$store.state.browseCollection.cardsNewest;
+     newestCards: function (){
+      return  this.$store.state.browseCollection.newest;
     },
-    cardsU: function () {
-      return this.$store.state.browseCollection.cardsUpdated;
+    updatedCards:function (){
+      return  this.$store.state.browseCollection.updated;
     },
   },
-  created: function () {
-    this.$store.dispatch("fetch6newest");
-    this.$store.dispatch("fetch6updated");
-    this.$store.dispatch("fetch6popular");
-    if (this.internalName === "Recently Updated") {
-      this.allCards = this.cardsU;
+  created: function () { this.$store.dispatch("clean");
+  if (this.internalName === "Most Popular") {
+   
+     this.$store.dispatch("fetch6popular"); 
+    this.allCards=this.popularCards;
     }
     if (this.internalName === "Newest") {
-      this.allCards = this.cardsN;
+    this.$store.dispatch("fetch6newest"); 
+    this.allCards=this.newestCards;
     }
+    if (this.internalName === "Recently Updated") {
+     this.$store.dispatch("fetch6updated");
+    this.allCards=this.updatedCards;
+    }
+    
 
-    if (this.internalName === "Most Popular") {
-      this.allCards = this.cardsM;
-    }
+  
   },
 };
 </script>

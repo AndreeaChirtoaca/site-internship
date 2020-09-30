@@ -1,16 +1,16 @@
 <template>
   <div class="searchCollection">
-    <div class="name">NAME</div>
+    <div class="name">{{ name }}</div>
     <div class="cardsSection">
-      <div v-for="card in cards">
-        <SearchCard
-          :imageCard="dataCard.imageCard"
-          :ratingCard="dataCard.ratingCard"
-          :descriptionCard="dataCard.descriptionCard"
-          :nameCard="dataCard.nameCard"
-          :idCard="dataCard.idCard"
-        ></SearchCard>
-      </div>
+      <SearchCard
+        v-for="(card, index) in cards"
+        :key="index"
+        :imageCard="card.image"
+        :ratingCard="card.rating"
+        :descriptionCard="card.description"
+        :nameCard="card.title"
+        :idCard="card.id"
+      ></SearchCard>
     </div>
   </div>
 </template>
@@ -20,22 +20,12 @@ import SearchCard from "./SearchCard";
 export default {
   name: "SearchCollection",
   components: {
-    SearchCard
+    SearchCard,
   },
-  data: function() {
-    return {
-      cards: [1, 2, 3, 4, 5, 6],
-      dataCard: {
-        idCard: 4,
-        nameCard: "Steins;Gate",
-        ratingCard: 4,
-        imageCard:
-          "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
-        descriptionCard:
-          "Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past. However throughout their experimentation process, an organization named SERN who has been doing their own research on time travel tracks them down. Now it’s a careful game of cat and mouse to not get caught and moreover, try to survive.Steins; Gate follows an eclectic group of individuals who have the ability to send text messages to the past."
-      }
-    };
-  }
+  props: {
+    name: String,
+    cards: [],
+  },
 };
 </script>
 
@@ -56,7 +46,7 @@ export default {
   text-transform: uppercase;
   font-size: 25px;
   font-weight: bold;
-  color: grey;
+  color: #ec7b3aea;
   margin-bottom: 5px;
 }
 @media screen and (max-width: 700px) {

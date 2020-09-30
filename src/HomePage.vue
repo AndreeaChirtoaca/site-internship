@@ -16,7 +16,7 @@
 <script>
 import axios from "axios";
 import HeroSection from "./components/HeroSection";
-import BrowseCollection from "./components/BrowseCollection";
+import BrowseCollection from "./BrowseCollection";
 import MoreAnime from "./components/MoreAnime";
 export default {
   name: "HomePage",

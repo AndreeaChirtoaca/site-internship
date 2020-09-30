@@ -2,16 +2,20 @@
   <div class="heroSection">
     <div class="showImage">
       <div class="heroImageFrame">
-        <img class="heroImage" :src="image">
+        <img class="heroImage" :src="image" />
       </div>
     </div>
     <div class="showText">
-      <h1 id="title">{{title}}</h1>
+      <h1 id="title">{{ title }}</h1>
       <div>
-        <p class="description" :class="{seeAll: see}">{{description}}</p>
-        <button class="seeMore" v-if="!see" @click="seeMore">...See more</button>
+        <p class="description" :class="{ seeAll: see }">{{ description }}</p>
+        <button class="seeMore" v-if="!see" @click="seeMore">
+          ...See more
+        </button>
       </div>
-      <button class="buttonHero" @click="goToShow()">Watch</button>
+      <router-link :to="'/ShowPage/' + this.id" class="buttonHero"
+        >Watch</router-link
+      >
     </div>
   </div>
 </template>
@@ -24,21 +28,18 @@ export default {
     subtitle: String,
     description: String,
     image: String,
-    id: String
+    id: String,
   },
-  data: function() {
+  data: function () {
     return {
-      see: false
+      see: false,
     };
   },
   methods: {
-    goToShow: function() {
-      this.$router.push({ path: "/ShowPage/" + this.id });
-    },
-    seeMore: function() {
+    seeMore: function () {
       this.see = true;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -117,6 +118,7 @@ color: rgba(226, 87, 37, 0.952)
 
 .buttonHero {
   font-family: Roboto;
+  text-decoration: none;
   font-weight: normal;
   border: none;
   cursor: pointer;

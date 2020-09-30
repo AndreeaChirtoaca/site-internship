@@ -30,32 +30,46 @@ export default {
     ShowPageHeader,
     ShowDescriptionCard,
     ShowEpisodeCollection,
-    ShowMetaCollection
+    ShowMetaCollection,
   },
-  data: function() {
+  data: function () {
     return {
       id: "",
       dataShow: {},
       trailer: "https://www.youtube.com/embed/2QTDcffpunY?list=RD2QTDcffpunY",
-      trailerId: ""
+      trailerId: "",
     };
   },
   computed: {
-    video: function() {
+    video: function () {
       return "https://www.youtube.com/embed/" + this.trailerId;
-    }
+    },
   },
-  created: function() {
+  created: function () {
     this.id = this.$route.params.id;
     const url = "https://kitsu.io/api/edge/anime/" + this.id;
 
-    axios.get(url).then(response => {
+    axios.get(url).then((response) => {
       //console.log(response.data.data);
       this.dataShow = response.data.data.attributes;
       this.trailerId = response.data.data.attributes.youtubeVideoId;
       //console.log(this.video)
     });
-  }
+
+    const charactersUrl = `https://kitsu.io/api/edge/anime/${this.id}/characters`;
+
+    axios.get(charactersUrl).then((response) => {
+      response.data.data.forEach((character) => {
+        axios
+          .get(
+            `https://kitsu.io/api/edge/media-characters/${character.id}/character`
+          )
+          .then(({ data }) => {
+            console.log(data);
+          });
+      });
+    });
+  },
 };
 </script>
 

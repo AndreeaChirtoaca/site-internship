@@ -5,10 +5,7 @@
     </div>
     <div class="textCard">
       <div class="title">{{ nameCard }}</div>
-      <p class="rating">
-        Rating:
-        <span>{{ ratingCard }}</span> stars
-      </p>
+
       <p class="description">{{ descriptionCard }}</p>
       <div id="more">
         <span>...</span>
@@ -28,7 +25,7 @@ export default {
     idCard: String,
     nameCard: String,
     imageCard: String,
-    ratingCard: Number,
+    ratingCard: String,
     descriptionCard: String,
   },
   data: function () {

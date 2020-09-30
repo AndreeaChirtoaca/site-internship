@@ -1,12 +1,12 @@
 <template>
   <div class="card">
     <div class="imageContainer">
-      <img class="image" :src="image">
+      <img class="image" :src="image" />
     </div>
     <div class="info">
-      <p id="name">{{name}}</p>
+      <p id="name">{{ name }}</p>
       <div id="descriptionBox">
-        <p id="description">{{description}}</p>
+        <p id="description">{{ description }}</p>
       </div>
     </div>
   </div>
@@ -16,14 +16,14 @@
 export default {
   name: "ShowMetaCard",
 
-  data: function() {
+  data: function () {
     return {
       image:
         "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
       name: "hegefrgq3",
-      description: "wekfre"
+      description: "wekfre",
     };
-  }
+  },
 };
 </script>
 
@@ -35,7 +35,7 @@ export default {
   padding: 2px;
   box-sizing: border-box;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
-  width: 32.65%;
+  width: 48.9%;
   height: 3cm;
 }
 .card:hover {

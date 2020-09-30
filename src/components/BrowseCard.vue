@@ -21,14 +21,6 @@ export default {
     nameCard: String,
     imageCard: String,
   },
-  data: function () {
-    return {
-      imageShow:
-        "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
-      id: this.idCard,
-      nameShow: "Steins;Gate",
-    };
-  },
 };
 </script>
 
@@ -58,12 +50,18 @@ export default {
   width: 96.5%;
 }
 .title {
+   --line-height: 20px;
+  --n-of-lines: 4;
+  --max-height: calc(var(--line-height)*var(--n-of-lines));
   text-decoration: none;
   color: black;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-weight: bold;
+  line-height: var(--line-height);
+  max-height: var(--max-height);
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 20px;
-  max-height: 2cm;
   overflow: hidden;
   width: 100%;
 }

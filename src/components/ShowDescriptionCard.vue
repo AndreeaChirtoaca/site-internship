@@ -1,16 +1,16 @@
 <template>
   <div class="card">
     <div class="imageContainer">
-      <img class="imageCard" :src="imageShow">
+      <img class="imageCard" :src="imageShow" />
     </div>
     <div class="textCard">
-      <div class="title">{{titleShow}}</div>
-      <div class="subtitle">{{subtitleShow}}</div>
+      <div class="title">{{ titleShow }}</div>
+      <div class="subtitle">{{ subtitleShow }}</div>
       <p class="rating">
         Popularity Rank:
-        <span>{{ratingShow}}</span> stars
+        <span>{{ ratingShow }}</span> stars
       </p>
-      <p class="description">{{descriptionShow}}</p>
+      <p class="description">{{ descriptionShow }}</p>
     </div>
   </div>
 </template>
@@ -23,11 +23,11 @@ export default {
     subtitleShow: String,
     ratingShow: Number,
     imageShow: String,
-    descriptionShow: String
+    descriptionShow: String,
   },
-  data: function() {
+  data: function () {
     return {};
-  }
+  },
 };
 </script>
 
@@ -45,14 +45,14 @@ export default {
   position: relative;
   width: 30%;
   padding-top: 10px;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 .imageCard {
   object-fit: cover;
   height: 9cm;
   position: absolute;
-  left: 20;
-  top: 30;
+  left: 30;
+  top: 40;
 }
 .textCard {
   height: 100%;

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <SearchPageForm/>
-    <SearchCollection/>
-    <SearchCollection/>
+    <SearchPageForm />
+    <SearchCollection name="Series" :cards="tvList" />
+    <SearchCollection name="Movies" :cards="moviesList" />
   </div>
 </template>
 
@@ -13,13 +13,19 @@ export default {
   name: "SearchPage",
   components: {
     SearchPageForm,
-    SearchCollection
+    SearchCollection,
   },
-  data: function() {
-    return {
-      search: ""
-    };
-  }
+  data: function () {
+    return {};
+  },
+  computed: {
+    tvList: function () {
+      return this.$store.state.search.tvList;
+    },
+    moviesList: function () {
+      return this.$store.state.search.moviesList;
+    },
+  },
 };
 </script>
 
