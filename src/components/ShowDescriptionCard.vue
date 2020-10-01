@@ -6,10 +6,7 @@
     <div class="textCard">
       <div class="title">{{ titleShow }}</div>
       <div class="subtitle">{{ subtitleShow }}</div>
-      <p class="rating">
-        Popularity Rank:
-        <span>{{ ratingShow }}</span> stars
-      </p>
+
       <p class="description">{{ descriptionShow }}</p>
     </div>
   </div>

@@ -1,12 +1,12 @@
 <template>
   <div class="card">
     <div class="image">
-      <router-link :to="{ path: '/ShowPage/' + id }">
+      <router-link :to="{ path: '/ShowPage/' + idCard }">
         <img class="cardImage" :src="imageCard" />
       </router-link>
     </div>
     <div class="titleContainer">
-      <router-link :to="{ path: '/ShowPage/' + id }" class="title">{{
+      <router-link :to="{ path: '/ShowPage/' + idCard }" class="title">{{
         nameCard
       }}</router-link>
     </div>

@@ -5,9 +5,6 @@
     </div>
     <div class="info">
       <p id="name">{{ name }}</p>
-      <div id="descriptionBox">
-        <p id="description">{{ description }}</p>
-      </div>
     </div>
   </div>
 </template>
@@ -16,13 +13,15 @@
 export default {
   name: "ShowMetaCard",
 
-  data: function () {
-    return {
-      image:
-        "https://funart.pro/uploads/posts/2019-12/1575953127_vrata-shtejna-0-steinsgate-0-anime-1.jpg",
-      name: "hegefrgq3",
-      description: "wekfre",
-    };
+  props: {
+    image: String,
+    name: String,
+    description: String,
+  },
+  computed: {
+    descriptionProp() {
+      return;
+    },
   },
 };
 </script>
@@ -30,13 +29,13 @@ export default {
 <style scoped>
 .card {
   display: flex;
-  flex-direction: row;
+  flex-direction: ;
   margin: 5px;
   padding: 2px;
   box-sizing: border-box;
   box-shadow: 0 0 27px rgba(56, 50, 50, 0.5);
-  width: 48.9%;
-  height: 3cm;
+  width: 24.2%;
+  height: 5cm;
 }
 .card:hover {
   box-shadow: 0 0 27px rgba(216, 88, 42, 0.774);
@@ -47,22 +46,25 @@ export default {
   padding: 5px;
 }
 .image {
-  height: 2.5cm;
+  height: 150%;
   width: 100%;
   object-fit: cover;
 }
 .info {
-  width: 50%;
-  padding: 5px;
+  width: 25%;
+  align-items: center;
 }
 #name {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 24px;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding: 30px 10px 10px 30px;
 }
 #descriptionBox {
-  height: 2.5cm;
-  line-height: 18px;
+  line-height: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
   padding: 5px;
   width: 90%;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;

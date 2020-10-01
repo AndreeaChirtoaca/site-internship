@@ -2,10 +2,13 @@
   <div class="collection">
     <h2 id="cast">CAST</h2>
     <div class="metaCollection">
-      <ShowMetaCard></ShowMetaCard>
-      <ShowMetaCard></ShowMetaCard>
-      <ShowMetaCard></ShowMetaCard>
-      <ShowMetaCard></ShowMetaCard>
+      <ShowMetaCard
+        v-for="(character, index) in characters"
+        :key="index"
+        :image="character.image"
+        :name="character.name"
+        :description="character.description"
+      ></ShowMetaCard>
     </div>
   </div>
 </template>
@@ -15,14 +18,23 @@ import ShowMetaCard from "./ShowMetaCard";
 export default {
   name: "ShowMetaCollection",
   components: {
-    ShowMetaCard
+    ShowMetaCard,
   },
   props: {
-    idShow: String
+    idShow: String,
   },
-  data: function() {
-    return {};
-  }
+  computed: {
+    characters() {
+      return this.$store.state.cast.characterList;
+    },
+  },
+  created() {
+    if (this.$store.state.cast.ok === 0) {
+      this.$store.dispatch("fetchCharacter", {
+        id: this.idShow,
+      });
+    }
+  },
 };
 </script>
 

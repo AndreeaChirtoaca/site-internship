@@ -11,7 +11,7 @@ const mostPopular = {
   actions: {
     fetchPopular: function (context) {
       axios
-        .get("https://kitsu.io/api/edge/anime?sort=-popularityRank")
+        .get("https://kitsu.io/api/edge/anime?sort=popularityRank")
         .then((response) => {
           //console.log(response.data.data);
           context.commit("savePopular", response.data.data);

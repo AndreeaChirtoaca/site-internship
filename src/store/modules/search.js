@@ -21,7 +21,7 @@ const search = {
         state.tvList.push(element);
       }
     },
-    clean: function (state) {
+    cleanSearch: function (state) {
       state.moviesList = [];
       state.tvList = [];
     }
@@ -35,7 +35,7 @@ const search = {
             search
         )
         .then(function ({ data }) {
-          context.commit("clean");
+          context.commit("cleanSearch");
           data.data.forEach((element) => {
             context.commit("saveResult", element);
           });

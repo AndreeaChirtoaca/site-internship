@@ -1,6 +1,6 @@
 <template>
   <div class="collection">
-    <h2 id="episode">EPISODES</h2>
+    <h2 v-if="ok" id="episode">EPISODES</h2>
     <div class="episodeCollection">
       <ShowEpisodeCard
         v-for="(episode, index) in episodes"
@@ -30,6 +30,15 @@ export default {
     return {
       episodes: {},
     };
+  },
+  computed: {
+    ok: function () {
+      if (this.episodes === null) {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
   created: function () {
     const url = "https://kitsu.io/api/edge/anime/" + this.idShow + "/episodes";

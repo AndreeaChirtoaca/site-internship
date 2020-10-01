@@ -32,37 +32,33 @@ export default {
   data: function () {
     return {
       internalName: this.name,
-      allCards: []
+      allCards: [],
     };
   },
   computed: {
-    popularCards: function (){
-      return  this.$store.state.browseCollection.popular;
+    popularCards: function () {
+      return this.$store.state.browseCollection.popular;
     },
-     newestCards: function (){
-      return  this.$store.state.browseCollection.newest;
+    newestCards: function () {
+      return this.$store.state.browseCollection.newest;
     },
-    updatedCards:function (){
-      return  this.$store.state.browseCollection.updated;
+    updatedCards: function () {
+      return this.$store.state.browseCollection.updated;
     },
   },
-  created: function () { this.$store.dispatch("clean");
-  if (this.internalName === "Most Popular") {
-   
-     this.$store.dispatch("fetch6popular"); 
-    this.allCards=this.popularCards;
+  created: function () {
+    if (this.internalName === "Most Popular") {
+      this.$store.dispatch("fetch6popular");
+      this.allCards = this.popularCards;
     }
     if (this.internalName === "Newest") {
-    this.$store.dispatch("fetch6newest"); 
-    this.allCards=this.newestCards;
+      this.$store.dispatch("fetch6newest");
+      this.allCards = this.newestCards;
     }
     if (this.internalName === "Recently Updated") {
-     this.$store.dispatch("fetch6updated");
-    this.allCards=this.updatedCards;
+      this.$store.dispatch("fetch6updated");
+      this.allCards = this.updatedCards;
     }
-    
-
-  
   },
 };
 </script>

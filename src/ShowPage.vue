@@ -4,7 +4,6 @@
     <ShowDescriptionCard
       :titleShow="dataShow.canonicalTitle"
       :subtitleShow="dataShow.subtitleShow"
-      :ratingShow="dataShow.popularityRank"
       :imageShow="dataShow.posterImage.medium"
       :descriptionShow="dataShow.description"
     ></ShowDescriptionCard>
@@ -12,7 +11,7 @@
       <ShowEpisodeCollection :idShow="id"></ShowEpisodeCollection>
     </div>
     <div>
-      <ShowMetaCollection></ShowMetaCollection>
+      <ShowMetaCollection :idShow="id"></ShowMetaCollection>
     </div>
   </div>
 </template>
@@ -56,7 +55,7 @@ export default {
       //console.log(this.video)
     });
 
-    const charactersUrl = `https://kitsu.io/api/edge/anime/${this.id}/characters`;
+    /* const charactersUrl = `https://kitsu.io/api/edge/anime/${this.id}/characters`;
 
     axios.get(charactersUrl).then((response) => {
       response.data.data.forEach((character) => {
@@ -67,8 +66,8 @@ export default {
           .then(({ data }) => {
             console.log(data);
           });
-      });
-    });
+     });
+    });*/
   },
 };
 </script>
